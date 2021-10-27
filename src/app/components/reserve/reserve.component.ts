@@ -26,6 +26,8 @@ export class ReserveComponent implements OnInit {
   isLoading = false;
   pets: Pet[] = new Array();
   pet: Pet;
+  price: string;
+  reserve: string;
   items: CartItem[] = new Array();
   chosen: string;
   shipping: ShippingDetails = new ShippingDetails();
@@ -57,6 +59,9 @@ export class ReserveComponent implements OnInit {
           this.pet = item.pet;
         }
       })
+
+      this.price = "Full Price: $" + this.pet.price;
+      this.reserve = "To Reserve: $" + this.pet.reserve_fee;
     })
 
     this.router.events.subscribe((evt) => {

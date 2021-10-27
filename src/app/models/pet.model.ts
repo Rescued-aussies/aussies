@@ -104,14 +104,21 @@ export const PETS: Pet[] = [
 
     {
         id: 'mac', size: 'Standard', name: 'MAC ', image: 'assets/img/aussies/mac.png',
-        gender: 'Male', age: "12 Weeks", ageNumber: 9, price: 700, reserve_fee: 250,
+        gender: 'Male', age: "12 Weeks", ageNumber: 12, price: 700, reserve_fee: 250,
         registered: "AKC Registered", status: 'Available', WandH: '20.5 lbs & 9 Inches',
         description: "Meet Mac, a friendly Australian Shepherd puppy who is well socialized being family raised with children! This playful pooch is vet checked, up to date on vaccinations and dewormer, plus Mac comes with a 6 months genetic health guarantee to support you through his growth.",
     } as Pet,
 
     {
+        id: 'hugo', size: 'Standard', name: 'HUGO ', image: 'assets/img/aussies/hugo.jpeg',
+        gender: 'Male', age: "12 Weeks", ageNumber: 12, price: 700, reserve_fee: 250,
+        registered: "AKC Registered", status: 'Available', WandH: '23 lbs & 10 Inches',
+        description: "Hugo is vet checked and up to date on all shots, he goes with 1 Year genetic health guarantee so you don't bother about spending on his health. This cutie is AKC registered and love being around other puppies or any playmate.",
+    } as Pet,
+
+    {
         id: 'elsa', size: 'Standard', name: 'ELSA ', image: 'assets/img/aussies/elsa.jpeg',
-        gender: 'Male', age: "11 Weeks", ageNumber: 9, price: 700, reserve_fee: 250,
+        gender: 'Female', age: "11 Weeks", ageNumber: 9, price: 700, reserve_fee: 250,
         registered: "AKC Registered", status: 'Available', WandH: '19 lbs & 9 Inches',
         description: "Elsa is a cute little bundle. She has some deep striking colors.  She is used to being around small children and has received plenty of attention as she is also gives much attention. These little one is current on all shots and would love to pair with someone who knows how to be caring.",
     } as Pet,

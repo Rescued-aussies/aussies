@@ -86,6 +86,7 @@
       </div>
       
       <div class="col-lg-8">
+        <a href="/policies" class="blink">Our Reservation Policy...</a>
         <form #reserveForm="ngForm" (ngSubmit)="submit()">
           <div class="form-group" *ngIf="items.length > 0">
             <label for="name">Aussie Selected.</label>
@@ -98,6 +99,16 @@
               <option value="No pet selected" selected>Select Aussie</option>
               <option *ngFor="let pet of pets" value="{{pet}}">{{pet.name}}</option>
             </select>
+          </div>
+          <div class="form-group">
+            <label for="price">Aussie Fees.</label>
+            <div class="row">
+              <div class="col-lg-3">
+                <input type="text" class="form-control" value="{{price}}" disabled="true">
+              </div><div class="col-lg-3">
+                <input type="text" class="form-control" value="{{reserve}}" disabled="true">
+              </div>
+            </div>
           </div>
           <div class="form-group">
             <label for="name">Name.</label>
