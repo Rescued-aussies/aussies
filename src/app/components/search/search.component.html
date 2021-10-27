@@ -1,0 +1,69 @@
+<!-- Subheader Start -->
+<div class="ghive_subheader" style="background-image: url(assets/img/subheader.png)">
+  <i class="fas fa-bone"></i>
+  <i class="fas fa-bone"></i>
+  <div class="container">
+    <div class="ghive_subheader-inner">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Search</li>
+        </ol>
+      </nav>
+      <h1 *ngIf="empty">No Aussie Found</h1>
+      <h1 *ngIf="!empty">Aussies Found</h1>
+    </div>
+  </div>
+</div>
+<!-- Subheader End -->
+
+<!-- Recent Pet Cares  Start -->
+<div class="section section-padding pt-0" style="margin-top: 20px;">
+  <img src="assets/img/bg1.png" class="texture-1" alt="Texture 1">
+  <div class="container">
+
+    <div class="section-title flex-title" *ngIf="!empty">
+      <h3 class="title">All Available Aussies From Search... </h3>
+      <!-- <div class="section-title-control">
+        <a href="store/new" class="ghive_btn-custom light">Add New Pet. </a>
+      </div> -->
+    </div>
+
+    <div class="section-title flex-title" *ngIf="empty">
+      <h3 class="title">Sorry We Could Not Match Your Search... </h3>
+      <h5 class="title">Please try using <strong>"Male"</strong> or <strong>"Female"</strong> in the <strong>Gender</strong> field with an <strong>Age range</strong> of <strong>6 - 18 Weeks</strong> in the <strong>Age</strong> field..</h5>
+      <div class="section-title-control">
+        <a routerLink="/puppies" class="ghive_btn-custom light">Browse All Puppies... </a>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <!-- Pet Card Start -->
+      <div class="col-lg-4" *ngFor="let pet of pets">
+        <div class="ghive_job-card" *ngIf="pet.name != ''">
+          <div class="ghive_job-card-header">
+            <img src="{{pet.image}}" alt="{{pet.name}}">
+            <a (click)="changeHeartState()" [ngStyle]="{color: liked === true ? '#ff5c1c' : '#dde3e7'}"
+              style="cursor: pointer;">
+              <i class="flaticon-heart"></i>
+            </a>
+          </div>
+          <div class="ghive_job-card-body">
+            <h5> <a [routerLink]="['/puppy', pet.id]" >{{pet.name}} </a> </h5>
+            <ul style="margin-bottom: 0px; list-style-type: circle; font-family: Aclonica;">
+              <li style="color: #24bb7d;">{{pet.gender}}</li>
+              <li style="color: #24bb7d;">{{pet.age}}</li>
+              <li style="color: #24bb7d;">{{pet.registered}}</li>
+            </ul>
+          </div>
+          <div class="ghive_job-card-footer">
+            <a class="ghive_btn-custom primary btn-block ghive_rounded" [routerLink]="['/puppy', pet.id]" routerLinkActive="router-link-active" > Reserve </a>
+          </div>
+        </div>
+      </div>
+      <!-- Pet Card End -->
+    </div>
+  </div>
+</div>
+<!-- Recent Pet Cares  End -->

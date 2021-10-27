@@ -1,0 +1,156 @@
+<!-- Subheader Start -->
+<div class="ghive_subheader" style="background-image: url(assets/img/subheader.png)">
+  <i class="fas fa-bone"></i>
+  <i class="fas fa-bone"></i>
+  <div class="container">
+    <div class="ghive_subheader-inner">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+        </ol>
+      </nav>
+      <h1>Editting Store</h1>
+    </div>
+  </div>
+</div>
+<!-- Subheader End -->
+
+<!-- Icon Block Start -->
+<div class="section">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-4">
+        <div class="ghive_icon-block style-4">
+          <div class="ghive_icon-block-icon">
+            <i class="flaticon-adress"></i>
+          </div>
+          <div class="ghive_icon-block-content">
+            <h6>Our Address</h6>
+            <p>Seas divided moveth saying a one seed form were form bring gathering replenish winged subdue.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="ghive_icon-block style-4">
+          <div class="ghive_icon-block-icon">
+            <i class="flaticon-call"></i>
+          </div>
+          <div class="ghive_icon-block-content">
+            <h6>Phone Number</h6>
+            <p>Seas divided moveth saying a one seed form were form bring gathering replenish winged subdue.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="ghive_icon-block style-4">
+          <div class="ghive_icon-block-icon">
+            <i class="flaticon-mail"></i>
+          </div>
+          <div class="ghive_icon-block-content">
+            <h6>Email support</h6>
+            <p>Seas divided moveth saying a one seed form were form bring gathering replenish winged subdue.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Icon Block End -->
+
+<!-- Contact form Start -->
+<div class="section pt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="section-title-2">
+          <p>Contact Us</p>
+          <h3 class="title">Don't Hesitate to Contact us, Even for Suggestion </h3>
+        </div>
+        <!-- <div class="row">
+          <div class="col-lg4">
+            <img [src]="image.value" class="img-responsive" alt="New Pet Image Not Found!">
+          </div>
+        </div> -->
+      </div>
+      <div class="col-lg-8">
+        <form [formGroup]="newPetForm" *ngIf="newPetForm" (ngSubmit)="onSubmit()">
+          <div class="form-group" *ngIf="editMode">
+            <label for="databaseID">#######</label>
+            <input type="text" class="form-control" placeholder="Hidden Field"
+              id="databaseID" name="databaseID" formControlName="databaseID" disabled=true>
+          </div>
+          <div class="form-group">
+            <label for="id">Pet Unique ID</label>
+            <input type="text" class="form-control" placeholder="Pet ID ? It should be the name of pet (lowercase)"
+              id="id" name="id" formControlName="id">
+          </div>
+          <div class="form-group">
+            <label for="name">Pet Name</label>
+            <input type="text" class="form-control" placeholder="Pet Name ?" id="name" name="name"
+              formControlName="name">
+          </div>
+          <div class="form-group">
+            <label for="gender">Pet Gender</label>
+            <input type="text" class="form-control" placeholder="Pet Gender ?" id="gender" name="gender"
+              formControlName="gender">
+          </div>
+          <div class="form-group">
+            <label for="age">Pet Age</label>
+            <input type="text" class="form-control" placeholder="Pet Age ? (In Weeks)" id="age" name="age"
+              formControlName="age">
+          </div>
+          <div class="form-group">
+            <label for="ageNumber">Age Number</label>
+            <input type="number" class="form-control" placeholder="Please just enter the age number of the pet"
+              id="ageNumber" name="ageNumber" formControlName="ageNumber">
+          </div>
+          <div class="form-group">
+            <label for="image">Pet Image</label>
+            <input type="text" class="form-control" placeholder="Image Link Of Pet ?" id="image" name="image"
+              formControlName="image" #image>
+          </div>
+          <div class="row " >
+            <div class="col-lg4">
+              <img [src]="image.value" 
+              style="display: block;
+              margin-left: auto;
+              margin-right: auto;
+              width: 50%;
+              border-radius: 50%;" 
+              class="img-responsive" alt="New Pet Image Not Found!">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="price">Pet Price</label>
+            <input type="number" class="form-control" placeholder="Pet Price ?" id="price" name="price"
+              formControlName="price">
+          </div>
+          <div class="form-group">
+            <label for="registered">Pet Registration</label>
+            <input type="text" class="form-control" placeholder="Pet Registration ?" id="registered" name="registered"
+              formControlName="registered">
+          </div>
+          <div class="form-group">
+            <label for="description">Pet Description</label>
+            <textarea class="form-control" placeholder="Please provide pet description..." id="description"
+              name="description" rows="7" formControlName="description"></textarea>
+          </div>
+          <button type="submit" class="ghive_btn-custom ghive_rounded" name="button">{{submit}} </button> |
+          <a  class="ghive_btn-custom ghive_rounded" name="button" routerLink="../">Go Back To Store</a>
+          <!-- <span style="padding-right: 10px; padding-left: 50%;">
+            <a  style="padding-right: 10px; padding-left: 50%;" class="ghive_btn-custom ghive_rounded" name="button" routerLink="../">Go Back To Store</a>
+          </span> -->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Contact form End -->

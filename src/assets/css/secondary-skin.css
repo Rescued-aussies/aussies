@@ -1,0 +1,205 @@
+
+/* Main Color */
+.ghive_video-button,
+.ghive_video-button::before,
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before,
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before,
+.ghive_btn-custom,
+.ghive_btn-custom.primary,
+.primary-bg,
+.nav-link.active,
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active,
+.aside-toggler.desktop-toggler,
+.ghive_footer-bottom .ghive_footer-copyright > a:hover i,
+.ghive_post .ghive_post-categories a:hover,
+.ghive_post.ghive_post-quote .ghive_post-categories a:hover,
+.tags a:hover,
+.tagcloud a:hover,
+.entry-content .wp-block-tag-cloud a:hover,
+.irs--flat .irs-from,
+.irs--flat .irs-to,
+.irs--flat .irs-single,
+.irs--flat .irs-bar,
+.irs--flat .irs-handle>i:first-child,
+.irs--round .irs-from, .irs--round .irs-to, .irs--round .irs-single,
+.irs--round .irs-bar,
+.ghive_candidate-details .ghive_candidate-section > h5::before,
+.ghive_icon-block.style-3 .ghive_icon-block-icon,
+.ghive_arrows .slick-arrow:hover,
+.slick-dots li.slick-active button,
+.pagination .page-item.active .page-link,
+.ghive_timeline-item-content::before{
+  background-color: #614327;
+}
+
+.irs--flat .irs-from:before,
+.irs--flat .irs-to:before,
+.irs--flat .irs-single:before,
+.irs--round .irs-from:before,
+.irs--round .irs-to:before,
+.irs--round .irs-single:before{
+  border-top-color: #614327;
+}
+
+.custom-primary,
+a,
+.ghive_list li::before,
+.ghive_list li i,
+.section-title-2 p:first-child,
+.ghive_header-top-sm li a:hover,
+.ghive_header-top-links a:hover,
+.ghive_header-controls a:not(.ghive_btn-custom):hover,
+.ghive_header-middle .navbar > .navbar-nav > .menu-item > a:hover,
+.navbar-nav .mega-menu-item a:hover,
+.ghive_aside ul .menu-item a:hover,
+.ghive_aside ul .menu-item a.active,
+.ghive_footer-middle a:hover,
+.ghive_footer-bottom ul li a:hover,
+.ghive_footer-bottom .ghive_footer-copyright > a:hover,
+.footer-widget ul li a::before,
+.ghive_subheader .breadcrumb li a:hover,
+.ghive_subheader .ghive_post-single-meta a:hover,
+.ghive_subheader .breadcrumb .breadcrumb-item.active,
+.ghive_subheader .ghive_post-single-meta a i,
+.ghive_subheader .ghive_post-single-meta span i,
+.ghive_post .ghive_post-categories a,
+.comments-list .comment-item span,
+.sidebar-widget ul.sidebar-widget-list li a:hover,
+.ghive_icon-block.style-4 .ghive_icon-block-icon i,
+.ghive_auth-mini a:hover,
+.ghive_pricing .ghive_pricing-body ul li.available i,
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus,
+.slick-prev:hover::before,
+.slick-prev:focus::before,
+.slick-next:hover::before,
+.slick-next:focus::before,
+.pagination .page-item .page-link:hover,
+.pagination .page-item .page-link:focus,
+.accordion .card-header[aria-expanded="true"] i{
+  color: #614327;
+}
+
+blockquote{
+  border-left-color: #614327;
+}
+
+
+
+.irs--round .irs-handle,
+.ghive_timeline-item-content::after{
+  border-color: #614327;
+}
+
+.ghive_icon-block.style-3 circle{
+  stroke: #614327;
+}
+
+/* Main Color Hover */
+
+.ghive_video-button:hover,
+.ghive_video-button:focus,
+.ghive_btn-custom:hover,
+.ghive_btn-custom:focus,
+.ghive_btn-custom.primary:hover,
+.ghive_btn-custom.primary:focus,
+.ghive_btn-custom.light:hover,
+.ghive_btn-custom.light:focus,
+.navbar-nav .mega-menu-item .ghive_btn-custom:hover,
+.aside-toggler.desktop-toggler:hover,
+.ghive_post-share .ghive_sm li a:hover,
+.irs--flat .irs-handle.state_hover>i:first-child,
+.irs--flat .irs-handle:hover>i:first-child{
+  background-color: #c6d03c;
+}
+
+a:hover,
+a:focus,
+.ghive_btn-link:hover,
+.ghive_post .ghive_post-meta a:hover,
+.ghive_post .ghive_post-body h4 a:hover,
+.ghive_post .ghive_post-body .ghive_post-desc > span a:hover,
+.ghive_post-single .ghive_post-share .ghive_post-terms a:hover,
+.widget-recent-posts .ghive_post h6 a:hover,
+.ghive_comment-widget h6 a:hover,
+.ghive_job-card-body h5 a:hover,
+.ghive_job-card.job-list .ghive_job-card-header-content h5 a:hover,
+.ghive_icon-block.style-2:hover h6,
+.ghive_banner .ghive_banner-social-media a:hover{
+  color: #c6d03c;
+}
+
+.ghive_btn-custom.light:hover,
+.ghive_btn-custom.light:focus{
+  border-color: #c6d03c;
+}
+
+/* Secondary Color */
+.ghive_btn-custom.secondary,
+.secondary-bg,
+.timeline-secondary .ghive_timeline-item-content::before,
+.ghive_icon-block.ghive_employer-card:hover > .ghive_btn-custom{
+  background-color: #f3de24;
+}
+
+.ghive_icon-block.style-3 .secondary-bg circle{
+  stroke: #f3de24;
+}
+.timeline-secondary .ghive_timeline-item-content::after{
+  border-color: #f3de24;
+}
+
+/* Secondary Color Hover */
+.ghive_btn-custom.secondary:hover,
+.ghive_btn-custom.secondary:focus{
+  background-color: #261b38;
+}
+
+/* Type Color */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong,
+label,
+table th,
+.ghive_btn-link,
+.ghive_btn-custom.light,
+.nav-tabs .nav-link,
+.ghive_header-controls a:not(.ghive_btn-custom),
+.ghive_header-middle .navbar > .navbar-nav > .menu-item > a,
+.navbar-nav .mega-menu-promotion-text h4 a,
+.ghive_aside ul .menu-item a,
+.ghive_footer-bottom .ghive_footer-copyright > a,
+.ghive_post .ghive_post-body h4 a,
+.ghive_post .ghive_post-body .ghive_post-desc > span,
+.ghive_post .ghive_post-body .ghive_post-desc > span a,
+.reply-link,
+.ghive_post-single-author-content p,
+.ghive_post-share .ghive_sm li a,
+.widget-recent-posts .ghive_post h6 a,
+.ghive_comment-widget h6 a,
+.ghive_job-card-body h5 a,
+.ghive_job-card.job-list .ghive_job-card-header-content h5 a,
+.ghive_auth-form a,
+.ghive_auth-mini a,
+.ghive_pricing .ghive_btn-custom.light:hover,
+.ghive_arrows .slick-arrow,
+.slick-prev,
+.slick-next,
+.slick-prev:before,
+.slick-next:before,
+.pagination .page-link,
+.accordion .card .card-header{
+  color: #7d5f3b;
+}
+
+/* tertiary Color */
+.tertiary-bg{
+  background-color: #c6d03c;
+}

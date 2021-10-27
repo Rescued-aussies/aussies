@@ -1,0 +1,56 @@
+<!-- Subheader Start -->
+<div class="ghive_subheader" style="background-image: url(assets/img/subheader.png)">
+  <i class="fas fa-bone"></i>
+  <i class="fas fa-bone"></i>
+  <div class="container">
+    <div class="ghive_subheader-inner">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+          <li class="breadcrumb-item"><a routerLink="/puppies">Aussie</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{pet.id}}</li>
+        </ol>
+      </nav>
+      <h1>About {{pet.name}}</h1>
+    </div>
+  </div>
+</div>
+<!-- Subheader End -->
+
+<div class="container" style="margin-top: 30px;">
+  <div class="row">
+    <div class="col-md-5 ghive_job-details-header">
+      <img src="{{pet.image}}" class="center-block img-responsive" alt="{{pet.name}}">
+    </div>
+    <div class="col-md-7" style="margin-top: 20px;">
+      <h3>Name: <span>{{pet.name}}</span></h3>
+      <div class="row">
+        <div class="col-sm-5">
+          <ul style="list-style-type: disc; padding-left: 20px;">
+            <li><strong>Age: </strong><span>{{pet.age}}</span></li>
+            <li><strong>Sex: </strong><span>{{pet.gender}}</span></li>
+            <li><strong>Size: </strong><span>{{pet.size }} Aussie</span></li>
+            <li><strong>Weight & Height: </strong><span> {{pet.WandH}}</span></li>
+          </ul>
+        </div>
+        <div class="col-sm-5">
+          <ul style="list-style-type: disc; padding-left: 20px;">
+            <li><strong>Registration: </strong><span>{{pet.registered}}</span></li>
+            <li><strong>Vacination: </strong><span>Current on all shots</span></li>
+            <li><strong>Status: </strong>{{pet.status}}</li>
+          </ul>
+        </div>
+      </div>
+      <h3>Price: <span>${{pet.price}}</span></h3>
+      <div class="row">
+        <div class="col-md-12 ">
+          <p>
+           {{pet.description}}
+          </p>
+        </div>
+      </div>
+      <button type="submit" class="ghive_btn-custom primary btn-block ghive_rounded" (click)="reservePet()"> Inquire! </button>
+    </div>
+  </div>
+  <hr>
+</div>

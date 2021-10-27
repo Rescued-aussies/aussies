@@ -1,0 +1,495 @@
+<!-- Banner Start -->
+<div class="ghive_banner banner" style="background-image: url(assets/img/banner/1.jpg)">
+
+  <div class="container" >
+    <div class="row">
+      <div class="col-lg-12">
+        <div >
+          <p>
+            In light of the COVID-19 pandemic, we will not hold public adoption events and have canceled other planned events.  We are still taking in dogs and looking for volunteers to adopt them, however since most of the shelters we work with have stopped doing adoptions to the public, but the dogs haven’t stopped coming in and out as we ship to families.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      
+      <div class="col-lg-6 offset-lg-6">
+        <div class="ghive_banner-text">
+          <h2>Rescued Australian Shepherds Puppies...</h2>
+          <p>Puppies, Adult, Parents... </p>
+        </div>
+
+        <!-- Filter form start -->
+        <form class="ghive_banner-form" #searchForm="ngForm" (ngSubmit)="search()">
+          <div class="ghive_banner-form-inner">
+            <div class="ghive_banner-input">
+              <label for="filterBy">Search By Gender</label>
+              <input type="text" 
+              class="form-control" 
+              id="gender" 
+              placeholder="Male or Female." 
+              name="gender"
+              [(ngModel)]="genderSearch"
+              value="">
+            </div>
+            <div class="ghive_banner-input">
+              <label for="filterLocation">And/Or Age Limit</label>
+              <input type="number" 
+              class="form-control" 
+              id="age" 
+              placeholder="Upper Age Limit? (In Weeks)"
+              name="age"
+              [(ngModel)]="ageSearch"
+              min="5"
+              value="">
+            </div>
+          </div>
+          <button type="submit" class="ghive_btn-custom primary btn-lg" name="button">Search Aussie
+          </button>
+        </form>
+        <!-- Filter form End -->
+
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- Banner End -->
+
+<!-- How it Works Start (Icon Block) -->
+<div class="section section-padding">
+  <div class="container">
+
+    <div class="section-title">
+      <h3 class="title">Current On All Shots</h3>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-4">
+        <div class="ghive_icon-block">
+          <div class="ghive_icon-block-icon">
+            <img src="assets/img/block-4.png" alt="Icon Block">
+          </div>
+          <div class="ghive_icon-block-content">
+            <h6> Happy Healthy Aussies </h6>
+            <p>
+              Aussies are generally healthy, but like all breeds, they're prone to certain health conditions.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="ghive_icon-block">
+          <div class="ghive_icon-block-icon">
+            <img src="assets/img/block-5.png" alt="Icon Block">
+          </div>
+          <div class="ghive_icon-block-content">
+            <h6> Eager To Meet New Family </h6>
+            <p>
+              Aussies respond well to training methods that use positive reinforcement — rewards such as praise, play, and food.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="ghive_icon-block">
+          <div class="ghive_icon-block-icon">
+            <img src="assets/img/block-6.png" alt="Icon Block">
+          </div>
+          <div class="ghive_icon-block-content">
+            <h6>Happy Home </h6>
+            <p>
+              If you've got a yard, make sure you've also got a secure fence that your Aussie can't dig under or jump over.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+<!-- How it Works End (Icon Block) -->
+
+<!-- Recent Pet Cares  Start -->
+<div class="section section-padding pt-0">
+  <img src="assets/img/bg1.png" class="texture-1" alt="Texture 1">
+  <div class="container">
+
+    <div class="section-title flex-title">
+      <h3 class="title">Walk Your Auusie Home. </h3>
+      <div class="section-title-control">
+        <a routerLink="/puppies" class="ghive_btn-custom light">Browse All Aussies. </a>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <!-- Pet Card Start -->
+      <div class="col-lg-4" *ngFor="let pet of pets">
+        <div class="ghive_job-card">
+
+          <div class="ghive_job-card-header">
+            <img src="{{pet.image}}" alt="{{pet.name}}">
+            <a (click)="changeHeartState()" [ngStyle]="{color: liked === true ? '#ff5c1c' : '#dde3e7'}"
+              style="cursor: pointer;">
+              <i class="flaticon-heart"></i>
+            </a>
+          </div>
+
+          <div class="ghive_job-card-body">
+            <h5> <a [routerLink]="['/puppy', pet.id]" >{{pet.name}} </a> </h5>
+            <ul style="margin-bottom: 0px; list-style-type: circle; font-family: Aclonica;">
+              <li style="color: #808714;">{{pet.gender}}</li>
+              <li style="color: #808714;">{{pet.age}}</li>
+              <li style="color: #808714;">{{pet.registered}}</li>
+            </ul>
+          </div>
+
+          <div class="ghive_job-card-footer">
+            <a [routerLink]="['/puppy', pet.id]" class="ghive_btn-custom primary btn-block ghive_rounded">Inquire</a>
+          </div>
+
+        </div>
+      </div>
+      <!-- Pet Card End -->
+
+    </div>
+
+  </div>
+</div>
+<!-- Recent Pet Cares  End -->
+
+<!-- About Us Start -->
+<div class="section pt-0">
+  <div class="container">
+    <div class="row">
+
+      <img src="assets/img/about-2.png" alt="Image1" class="about-img-1 d-none d-lg-block">
+
+      <div class="offset-lg-6 col-lg-6">
+
+        <div class="section-title">
+          <h3 class="title">Aussies Love Socialization!</h3>
+        </div>
+        <p class="mb-40">
+          Socialization helps ensure that your Aussie puppy grows up to be a well-rounded dog. Enrolling him in a puppy kindergarten class is a great start. Inviting visitors over regularly, and taking him to busy parks, stores that allow dogs, and on leisurely strolls to meet neighbors will also help him polish his social skills.
+        </p>
+
+        <ul class="ghive_list list-2 mb-40">
+          <li>
+            <h6>Healthy</h6>
+          </li>
+          <li>
+            <h6>Playful</h6>
+          </li>
+          <li>
+            <h6>Great Personality</h6>
+          </li>
+          <li>
+            <h6>Bark For Long Period </h6>
+          </li>
+        </ul>
+
+        <a routerLink="/about" class="ghive_btn-custom">Learn More</a>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="circles-texture">
+    <div class="circle-1"></div>
+    <div class="circle-2"></div>
+  </div>
+
+</div>
+<!-- About Us End -->
+
+<!-- Our Services  Start (Icon Block style 2) -->
+<!-- <div class="section section-padding pt-0">
+  <img src="assets/img/bg2.png" class="texture-2" alt="Texture 1">
+  <div class="container">
+
+      <div class="section-title">
+          <h3 class="title">Our Services </h3>
+      </div>
+
+      <div class="row">
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="job-listings.html" class="ghive_icon-block style-2">
+                  <div class="ghive_icon-block-icon">
+                      <span></span>
+                      <span></span>
+                      <img src="assets/img/icons/8.png" alt="Icon Block">
+                  </div>
+                  <div class="ghive_icon-block-content">
+                      <h6>Pet Activities </h6>
+                      <p>3 Pet Cares </p>
+                  </div>
+              </a>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="job-listings.html" class="ghive_icon-block style-2">
+                  <div class="ghive_icon-block-icon">
+                      <span></span>
+                      <span></span>
+                      <img src="assets/img/icons/1.png" alt="Icon Block">
+                  </div>
+                  <div class="ghive_icon-block-content">
+                      <h6>Pet Hotel</h6>
+                      <p>2 Pet Cares </p>
+                  </div>
+              </a>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="job-listings.html" class="ghive_icon-block style-2">
+                  <div class="ghive_icon-block-icon">
+                      <span></span>
+                      <span></span>
+                      <img src="assets/img/icons/7.png" alt="Icon Block">
+                  </div>
+                  <div class="ghive_icon-block-content">
+                      <h6>Grooming </h6>
+                      <p>4 Pet Cares </p>
+                  </div>
+              </a>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="job-listings.html" class="ghive_icon-block style-2">
+                  <div class="ghive_icon-block-icon">
+                      <span></span>
+                      <span></span>
+                      <img src="assets/img/icons/6.png" alt="Icon Block">
+                  </div>
+                  <div class="ghive_icon-block-content">
+                      <h6>Veterinary 24*7</h6>
+                      <p>5 Pet Cares </p>
+                  </div>
+              </a>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="job-listings.html" class="ghive_icon-block style-2">
+                  <div class="ghive_icon-block-icon">
+                      <span></span>
+                      <span></span>
+                      <img src="assets/img/icons/5.png" alt="Icon Block">
+                  </div>
+                  <div class="ghive_icon-block-content">
+                      <h6>Vaccines</h6>
+                      <p>4 Pet Cares </p>
+                  </div>
+              </a>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="job-listings.html" class="ghive_icon-block style-2">
+                  <div class="ghive_icon-block-icon">
+                      <span></span>
+                      <span></span>
+                      <img src="assets/img/icons/2.png" alt="Icon Block">
+                  </div>
+                  <div class="ghive_icon-block-content">
+                      <h6>Training</h6>
+                      <p>5 Pet Cares </p>
+                  </div>
+              </a>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="job-listings.html" class="ghive_icon-block style-2">
+                  <div class="ghive_icon-block-icon">
+                      <span></span>
+                      <span></span>
+                      <img src="assets/img/icons/4.png" alt="Icon Block">
+                  </div>
+                  <div class="ghive_icon-block-content">
+                      <h6>Pet Housing</h6>
+                      <p>3 Pet Cares </p>
+                  </div>
+              </a>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="job-listings.html" class="ghive_icon-block style-2">
+                  <div class="ghive_icon-block-icon">
+                      <span></span>
+                      <span></span>
+                      <img src="assets/img/icons/3.png" alt="Icon Block">
+                  </div>
+                  <div class="ghive_icon-block-content">
+                      <h6>Special Care </h6>
+                      <p>4 Pet Cares </p>
+                  </div>
+              </a>
+          </div>
+
+      </div>
+
+  </div>
+</div> -->
+<!-- Our Services  End (Icon Block style 2) -->
+
+<!-- About Us Start -->
+<div class="section pt-0">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-lg-6 mb-lg-40">
+
+        <div class="section-title">
+          <h3 class="title">Aussies Are Naturally Friendly To Other Breeds.</h3>
+        </div>
+
+        <ul class="ghive_list no-arrows mb-40">
+          <li> <i class="fas fa-file"></i>
+            <h6>Submit Your Info With Choosen Pet. </h6>
+          </li>
+          <li> <i class="fas fa-arrow-circle-down"></i>
+            <h6>Get Notification From Us. </h6>
+          </li>
+          <li> <i class="fas fa-bell"></i>
+            <h6>Reserve Pet And Book An Appointment. </h6>
+          </li>
+        </ul>
+        <div class="ghive_flex-buttons">
+          <a class="ghive_btn-custom secondary" routerLink="puppies">
+            <div class="ghive_btn-text">
+              <span>Choose From</span>
+              <span>Available Aussies</span>
+            </div>
+          </a>
+          <a class="ghive_btn-custom primary" routerLink="contact" target="_self">
+            <div class="ghive_btn-text">
+              <span>Book An</span>
+              <span>Appointment</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <img src="assets/img/friendly-1.jpeg" alt="Image1" style="border-radius: 20%;">
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<!-- About Us End -->
+
+<!-- Counter Start -->
+<div class="section section-padding pt-0">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="ghive_counter">
+          <h3>2k+</h3>
+          <h6>Daily Searches</h6>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="ghive_counter">
+          <h3>200+</h3>
+          <h6>Pet Owners </h6>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="ghive_counter">
+          <h3>20+</h3>
+          <h6>Weekly Reservation </h6>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="ghive_counter">
+          <h3>80+</h3>
+          <h6>Happy Clients</h6>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<!-- Counter End -->
+
+<!-- Testimonials Start -->
+<div class="section pt-0 pb-0">
+  <div class="container">
+
+    <div class="section-title">
+      <h3 class="title">Customer Feedback</h3>
+    </div>
+
+    <div class="ghive_testimonials ghive_testimonials-slider">
+
+      <!-- Testimonial Start -->
+      <div class="ghive_testimonial-item">
+        <div class="ghive_testimonial-content">
+          <div class="ghive_testimonial-thumb">
+            <img src="assets/img/people/1.jpg" alt="Testimonial">
+          </div>
+          <p>It was nevertheless a good experience and relation we had with our aussie pups though we had to be very attentive as they were too fragile on their arrival but are strong loving puppies now. Please don't hesitate to contact us on any need puppy. Thanks.
+          </p>
+          <i class="flaticon-right-quote"></i>
+        </div>
+        <div class="ghive_testimonial-footer">
+          <h6>Morgan Esparo</h6>
+          <span>- Business Owner </span>
+        </div>
+      </div>
+      <!-- Testimonial End -->
+
+      <!-- Testimonial Start -->
+      <div class="ghive_testimonial-item">
+        <div class="ghive_testimonial-content">
+          <div class="ghive_testimonial-thumb">
+            <img src="assets/img/people/2.jpg" alt="Testimonial">
+          </div>
+          <p>
+            Thanks for the update in your emails, it lead to my son having a new playmate, and they just can't be separated.
+          </p>
+          <i class="flaticon-right-quote"></i>
+        </div>
+        <div class="ghive_testimonial-footer">
+          <h6>Werner Brawn</h6>
+          <span>- Software Engineer </span>
+        </div>
+      </div>
+      <!-- Testimonial End -->
+
+      <!-- Testimonial Start -->
+      <div class="ghive_testimonial-item">
+        <div class="ghive_testimonial-content">
+          <div class="ghive_testimonial-thumb">
+            <img src="assets/img/people/3.jpg" alt="Testimonial">
+          </div>
+          <p>
+            I feel so good to have adopt my little boy after i heared the mother gave bed to them and died after. So sad 😟 but happy with him now.
+          </p>
+          <i class="flaticon-right-quote"></i>
+        </div>
+        <div class="ghive_testimonial-footer">
+          <h6>Carlane J.</h6>
+          <span>- Medical Doctor </span>
+        </div>
+      </div>
+      <!-- Testimonial End -->
+
+    </div>
+
+  </div>
+</div>
+<!-- Testimonials End -->
