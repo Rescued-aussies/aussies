@@ -27,6 +27,7 @@ export class PetService {
             pet.price = element.price;
             pet.registered = element.registered;
             pet.description = element.description;
+            pet.reserve_fee = element.reserve_fee;
             pet.size = element.size;
             this.pets.push(pet);
         });

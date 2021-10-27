@@ -78,7 +78,7 @@
             <label for="puppy">Interested Puppy.</label>
             <select class="selectdiv" [(ngModel)]="contact.petSelected" name="pet" >
               <option value="No pet selected" selected>Select a puppy</option>
-              <option *ngFor="let pet of pets" value="{{pet}}">{{pet.name}}</option>
+              <option *ngFor="let pet of pets" value="{{pet.name}}">{{pet.name}}</option>
             </select>
           </div>
           <div class="form-group">

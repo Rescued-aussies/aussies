@@ -8,7 +8,7 @@ export class ShippingDetails {
     state: string = "";
     city: string = "Hidden Field. Details Omitted";
     zip: string = "Hidden Field. Details Omitted";
-    address1: string = "Address Omitted";
+    address1: string = "";
     address2: string = "";
     notes: String = "";
 }
