@@ -29,7 +29,7 @@ export class ReserveComponent implements OnInit {
   price: string;
   reserve: string;
   items: CartItem[] = new Array();
-  chosen: string;
+  chosen: string = '';
   shipping: ShippingDetails = new ShippingDetails();
   paymentOptions = ["Paypal", "Cashapp", "Zelle", "Applepay", "Venmo"];
 
@@ -48,20 +48,15 @@ export class ReserveComponent implements OnInit {
       this.pets = this.petService.getPets()
       this.shipping = new ShippingDetails();
       if (this.items.length > 0) {
-        this.chosen = this.items[0].pet.id;
+        this.pet = this.items[0].pet;
       } else {
-        this.chosen = this.pets[0].id;
-        this.pet = this.pets[0];
+        this.pet = null;
       }
 
-      this.items.forEach(item => {
-        if (item.pet.id == this.chosen) {
-          this.pet = item.pet;
-        }
-      })
-
-      this.price = "Full Price: $" + this.pet.price;
-      this.reserve = "To Reserve: $" + this.pet.reserve_fee;
+      if (this.pet != null) {
+        this.price = "Full Price: $" + this.pet.price;
+        this.reserve = "To Reserve: $" + this.pet.reserve_fee;
+      }
     })
 
     this.router.events.subscribe((evt) => {
@@ -70,7 +65,8 @@ export class ReserveComponent implements OnInit {
       }
       window.scrollTo(0, 0)
     });
-    this.titleService.setTitle('Reserve ' + this.pet.name)
+
+    !this.pet ? this.titleService.setTitle('Reserve Your Aussie') : this.titleService.setTitle('Reserve ' + this.pet.name)
   }
 
   submit() {
@@ -128,12 +124,12 @@ export class ReserveComponent implements OnInit {
     }
   }
 
-  onChange(value: string) {
-    console.log(value)
+  onChange(event: string) {
+    console.log(event);
     let item: Item = new Item();
-    item.pet = this.petService.getPet(this.chosen)
-    this.pet = item.pet
-    this.cartService.add(item)
+    item.pet = this.petService.getPet(event);
+    this.pet = item.pet;
+    this.cartService.add(item);
   }
 
 }

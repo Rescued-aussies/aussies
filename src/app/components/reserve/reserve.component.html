@@ -74,7 +74,7 @@
         <div class="row">
           <div class="col-lg-4">
             <img src="assets/img/puppy-form.png" 
-            alt="{{pet.name}}"
+            alt="reservation from"
             style="display: block;
               margin-left: auto;
               margin-right: auto;
@@ -86,21 +86,25 @@
       </div>
       
       <div class="col-lg-8">
-        <a href="/policies" class="blink">Our Reservation Policy...</a>
+        <div>
+          <h3 class="title">Our Reservation Policy...</h3>
+          <p>You will be sent a puppy reservation form with a reservation fee that varies depending on the litter type. Once we receive your deposit and form we log the date your deposit is received and place you on our list for the puppy of interest. <a href="/policies"><strong> Read more on our Policies here...</strong></a></p><br>
+        </div>
+        <!-- <a href="/policies" class="blink">Our Reservation Policy...</a> -->
         <form #reserveForm="ngForm" (ngSubmit)="submit()">
-          <div class="form-group" *ngIf="items.length > 0">
+          <div class="form-group" *ngIf="pet != null">
             <label for="name">Aussie Selected.</label>
-            <input type="text" class="form-control" name="pet" [(ngModel)]="pet.name" disabled="true">
+            <input type="text" class="form-control" name="petname" [(ngModel)]="pet.name" disabled="true">
           </div>
-          <div class="form-group" *ngIf="items.length == 0">
-            <label for="name">Aussie Selected.</label>
+          <div class="form-group" *ngIf="pet == null">
+            <label for="name">Select Aussie.</label>
             <!-- <input type="text" class="form-control" name="pet" [(ngModel)]="pet.name" disabled="true"> -->
-            <select class="selectdiv" name="pet" >
-              <option value="No pet selected" selected>Select Aussie</option>
-              <option *ngFor="let pet of pets" value="{{pet}}">{{pet.name}}</option>
+            <select class="selectdiv" name="pet" ngModel (ngModelChange)="onChange($event)">
+              <option value='' selected>Select Aussie</option>
+              <option *ngFor="let pet of pets" [ngValue]="pet.id" >{{pet.name}}</option>
             </select>
           </div>
-          <div class="form-group">
+          <div class="form-group" *ngIf="pet != null">
             <label for="price">Aussie Fees.</label>
             <div class="row">
               <div class="col-lg-3">
@@ -155,7 +159,7 @@
           </div>
           <div class="form-group">
             <label for="message">Message.</label>
-            <textarea class="form-control" placeholder="How Can we Help?" name="message" [(ngModel)]="shipping.notes" rows="7"></textarea>
+            <textarea class="form-control" placeholder="Additional notes ?..." name="message" [(ngModel)]="shipping.notes" rows="7"></textarea>
           </div>
           <button type="submit" class="ghive_btn-custom ghive_rounded" [disabled]="!reserveForm.valid || isLoading" >{{buttonMsg}}</button>
         </form>

@@ -25,6 +25,7 @@ import { ReviewsComponent } from './components/reviews/reviews.component';
 import { PolicyComponent } from './components/policy/policy.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './components/search/search.component';
+import { ShippingComponent } from './components/shipping/shipping.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { SearchComponent } from './components/search/search.component';
     AboutComponent,
     ReviewsComponent,
     PolicyComponent,
-    SearchComponent
+    SearchComponent,
+    ShippingComponent
   ],
   imports: [
     BrowserAnimationsModule,

@@ -13,6 +13,7 @@ import { PetComponent } from './components/pet/pet.component';
 import { PolicyComponent } from './components/policy/policy.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { SearchComponent } from './components/search/search.component';
+import { ShippingComponent } from './components/shipping/shipping.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: {title: 'Welcome Home'}},
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'reserve', component: ReserveComponent, data: { title: 'Reserve An Aussie'}},
   { path: 'puppies', component: PetsComponent},
   { path: 'policies', component: PolicyComponent, data: { title: 'Reservation Policy'}},
+  { path: 'shipping-policy', component: ShippingComponent},
   { path: 'reviews', component: ReviewsComponent, data: { title: 'Customer Feedback'}},
   { path: 'puppy/:id', component: PetComponent},
   { path: 'search/gender/:sex/age/:age', component: SearchComponent},
