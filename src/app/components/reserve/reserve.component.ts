@@ -22,7 +22,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class ReserveComponent implements OnInit {
 
-  buttonMsg = 'Reserve Now!';
+  buttonMsg = 'Reserve!';
   isLoading = false;
   pets: Pet[] = new Array();
   pet: Pet;
@@ -54,8 +54,8 @@ export class ReserveComponent implements OnInit {
       }
 
       if (this.pet != null) {
-        this.price = "Full Price: $" + this.pet.price;
-        this.reserve = "To Reserve: $" + this.pet.reserve_fee;
+        this.price = "Complete Fee: $" + this.pet.price;
+        this.reserve = "Reservation Fee: $" + this.pet.reserve_fee;
       }
     })
 
@@ -71,6 +71,7 @@ export class ReserveComponent implements OnInit {
 
   submit() {
     this.isLoading = true;
+    let button = this.buttonMsg;
     this.buttonMsg = "Please wait!....";
     if (this.items.length < 1) {
       Swal({
@@ -81,7 +82,7 @@ export class ReserveComponent implements OnInit {
         confirmButtonColor: '#614327'
       })
       this.isLoading = false;
-      this.buttonMsg = "Reserve Now!";
+      this.buttonMsg = button;
     } else {
       let checkout = new Checkout();
       let cart = new Cart()
@@ -90,6 +91,11 @@ export class ReserveComponent implements OnInit {
         apiCartItem.petName = value.pet.name;
         apiCartItem.productTotal = value.pet.price
         apiCartItem.reserve_fee = value.pet.reserve_fee
+        if (this.buttonMsg == "Reserve!") {
+          apiCartItem.note = "Client is making a reservation...";
+        } else if (this.buttonMsg == "Inquire!") {
+          apiCartItem.note == "Client is inquiring to pay full price...";
+        }
         cart.cartItems.push(apiCartItem)
       })
       cart.grandTotal = this.cartService.total();
@@ -108,7 +114,7 @@ export class ReserveComponent implements OnInit {
             confirmButtonColor: '#614327'
           })
           this.isLoading = false;
-          this.buttonMsg = "Reserve Now!";
+          this.buttonMsg = button;
         },
           (err: HttpErrorResponse) => {
             this.isLoading = false;
@@ -119,7 +125,7 @@ export class ReserveComponent implements OnInit {
               confirmButtonText: 'Ok!',
               confirmButtonColor: '#614327'
             })
-            this.buttonMsg = "Reserve Now!";
+            this.buttonMsg = button;
           });
     }
   }

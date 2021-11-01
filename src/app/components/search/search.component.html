@@ -55,10 +55,13 @@
               <li style="color: #24bb7d;">{{pet.gender}}</li>
               <li style="color: #24bb7d;">{{pet.age}}</li>
               <li style="color: #24bb7d;">{{pet.registered}}</li>
+              <hr>
+              <li style="color: #808714;"><span>Complete Fee: </span>${{pet.price}}</li>
+              <li style="color: #808714;"><span>Reservation Fee: </span>${{pet.reserve_fee}}</li>
             </ul>
           </div>
           <div class="ghive_job-card-footer">
-            <a class="ghive_btn-custom primary btn-block ghive_rounded" [routerLink]="['/puppy', pet.id]" routerLinkActive="router-link-active" > Reserve </a>
+            <a class="ghive_btn-custom primary btn-block ghive_rounded" [routerLink]="['/puppy', pet.id]" routerLinkActive="router-link-active" > Inquire </a>
           </div>
         </div>
       </div>
