@@ -84,6 +84,7 @@ export class ReserveComponent implements OnInit {
       this.isLoading = false;
       this.buttonMsg = button;
     } else {
+      this.buttonMsg = button;
       let checkout = new Checkout();
       let cart = new Cart()
       this.items.forEach((value: CartItem) => {
