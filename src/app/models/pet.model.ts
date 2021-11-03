@@ -54,6 +54,20 @@ export const PETS: Pet[] = [
     // New Aussie Puppies ************************************************************************
 
     {
+        id: 'dieser', size: 'Mini', name: 'DIESER', image: 'assets/img/aussies/dieser.png',
+        gender: 'Male', age: "9 Weeks", ageNumber: 9, price: 700, reserve_fee: 250,
+        registered: "AKC Registered", status: 'Available', WandH: '20 lbs & 7 Inches',
+        description: "Dieser is a precious little Aussie puppy who is just as cute as can be! This social aussie-type dog is vet checked and up to date on all shots. She is registered with the AKC and Potty Trained, plus comes with a health guarantee provided by the breeder. Dieser is family raised with children and she loves to cuddle and play.",
+    } as Pet,
+
+    {
+        id: 'daisy', size: 'Standard', name: 'DAISY ', image: 'assets/img/aussies/daisy.jpg',
+        gender: 'Female', age: "10 Weeks", ageNumber: 10, price: 700, reserve_fee: 250,
+        registered: "AKC Registered", status: 'Available', WandH: '20 lbs & 8 Inches',
+        description: "Check out, Daisy! She is an adorable Aussie puppy with a bubbly spirit. This precious little girl loves to play and is ready to join in all of your family fun. She is vet checked and up to date on all shots. She is registered with the AKC, plus comes with a health guarantee.",
+    } as Pet,
+
+    {
         id: 'micky', size: 'Mini', name: 'MICKY ', image: 'assets/img/aussies/micky.jpeg',
         gender: 'Male', age: "9 Weeks", ageNumber: 9, price: 700, reserve_fee: 250,
         registered: "AKC Registered", status: 'Available', WandH: '13 lbs & 5 Inches',
