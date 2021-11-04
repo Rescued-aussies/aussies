@@ -66,7 +66,7 @@ export class ReserveComponent implements OnInit {
       window.scrollTo(0, 0)
     });
 
-    !this.pet ? this.titleService.setTitle('Reserve Your Aussie') : this.titleService.setTitle('Reserve ' + this.pet.name)
+    !this.pet ? this.titleService.setTitle('Inquire | Aussie') : this.titleService.setTitle('Inquire About ' + this.pet.name)
   }
 
   submit() {
