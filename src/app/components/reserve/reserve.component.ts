@@ -88,6 +88,7 @@ export class ReserveComponent implements OnInit {
       let checkout = new Checkout();
       let cart = new Cart()
       this.items.forEach((value: CartItem) => {
+        this.buttonMsg = button;
         let apiCartItem: ApiCartItem = new ApiCartItem();
         apiCartItem.petName = value.pet.name;
         apiCartItem.productTotal = value.pet.price
@@ -99,6 +100,7 @@ export class ReserveComponent implements OnInit {
         }
         cart.cartItems.push(apiCartItem)
       })
+      this.buttonMsg = "Please wait!....";
       cart.grandTotal = this.cartService.total();
       checkout.cart = cart;
       checkout.shippingDetails = this.shipping;
