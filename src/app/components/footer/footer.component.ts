@@ -25,7 +25,6 @@ export class FooterComponent implements OnInit {
   submit() {
     this.buttonMsg = "Please Wait!..."
     this.isLoading = true;
-    this.contact.name = "Subscription!";
     this.contact.country = "Subscription!";
     this.contact.address1 = "Subscription!";
     this.contact.phone = "Subscription!"
