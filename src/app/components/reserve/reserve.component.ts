@@ -104,7 +104,7 @@ export class ReserveComponent implements OnInit {
         //   apiCartItem.note == "Client is inquiring to pay full price...";
         //   console.log(apiCartItem.note);
         // }
-        // console.log(apiCartItem.note);
+        console.log(apiCartItem.note);
         cart.cartItems.push(apiCartItem);
 
       })
@@ -138,7 +138,7 @@ export class ReserveComponent implements OnInit {
             })
             this.buttonMsg = button;
           });
-          this.buttonMsg = button;
+          // this.buttonMsg = button;
     }
   }
 
