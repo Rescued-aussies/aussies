@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent, data: { title: 'About'}},
   { path: 'contact', component: ContactComponent, data: { title: 'Contact Us'}},
   { path: 'reserve', component: ReserveComponent, data: { title: 'Reserve An Aussie'}},
-  { path: 'puppies', component: PetsComponent},
+  { path: 'puppies', component: PetsComponent, data: { title: 'Available Aussies'}},
   { path: 'policies', component: PolicyComponent, data: { title: 'Reservation Policy'}},
   { path: 'shipping-policy', component: ShippingComponent},
   { path: 'reviews', component: ReviewsComponent, data: { title: 'Customer Feedback'}},
@@ -29,13 +29,16 @@ const routes: Routes = [
   // { path: 'store', component: StoreComponent},
   // { path: 'store/:id', component: StoreEditComponent},
   // { path: '404', component: NotFoundComponent },
-  // {path: '**', redirectTo: '/404', pathMatch: 'full'}
+  {path: '**', redirectTo: '/404', pathMatch: 'full'}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
+  imports: [RouterModule.forRoot(
+    routes, 
+    {
     scrollPositionRestoration: 'enabled' // Add options right here
-  })
+    }
+  )
 ],
   exports: [RouterModule]
 })

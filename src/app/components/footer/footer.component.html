@@ -21,10 +21,21 @@
           <h5 class="widget-title">Newsletter</h5>
           <p>Subscribe and get updated on all newly born and arrived puppies together with additional events held by the center...
           </p>
-          <form class="ghive_newsletter" method="post">
+          <form class="ghive_newsletter" #contactForm="ngForm" (ngSubmit)="submit()">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Email Address" name="newsletterEmail" >
-              <button type="submit" class="ghive_btn-custom primary" name="button"> <i class="far fa-envelope-open"></i>
+              <input type="email"
+              class="form-control" 
+              placeholder="Email Address" 
+              name="email" 
+              [(ngModel)]="contact.email"
+              email 
+              required
+              #email="ngModel">
+              <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                <div *ngIf="email.errors?.required"> Email is required.</div>
+                <div *ngIf="email.errors?.invalid"> Please enter a valid email address.</div>
+              </div>
+              <button type="submit" class="ghive_btn-custom primary" name="button" [disabled]="!contactForm.valid || isLoading"> <i class="far fa-envelope-open"><br>{{buttonMsg}}</i>
               </button>
             </div>
           </form>

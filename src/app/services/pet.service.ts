@@ -18,6 +18,7 @@ export class PetService {
             pet.databaseID = element.databaseID;
             pet.id = element.id;
             pet.name = element.name;
+            pet.liked = element.liked;
             pet.age = element.age;
             pet.status = element.status;
             pet.WandH = element.WandH;

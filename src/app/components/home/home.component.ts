@@ -1,6 +1,8 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, Scroll, Event } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 import { Pet } from '../../models/pet.model';
 import { PetService } from '../../services/pet.service';
@@ -15,15 +17,16 @@ export class HomeComponent implements OnInit {
 
   subscribePets: Subscription;
   pets: Pet[] = [];
-  liked: boolean;
   genderSearch: string;
   ageSearch: number;
 
   constructor(
     private petService: PetService,
     private petStorageService: PetStorageService,
-    private router: Router
-  ) { }
+    private router: Router,
+  ) { 
+    
+  }
 
   ngOnInit() {
     // this.petStorageService.fetchPets();
@@ -31,11 +34,10 @@ export class HomeComponent implements OnInit {
     //   this.pets = elements;
     // })
     this.pets = this.petService.getPets();
-    this.liked = false;
   }
 
-  changeHeartState(): void {
-    this.liked = !this.liked;
+  changeHeartState(pet: Pet): void {
+    pet.liked = !pet.liked ? true : false;
   }
 
   // ngOnDestroy() {
@@ -44,6 +46,13 @@ export class HomeComponent implements OnInit {
 
   search() {
     this.router.navigate(['/search', 'gender', this.genderSearch, 'age', this.ageSearch])
+  }
+
+  printPrice(price : number)
+  {
+    var price_parts = price.toString().split(".");
+    price_parts[0] = price_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return price_parts.join(".");
   }
 
 }

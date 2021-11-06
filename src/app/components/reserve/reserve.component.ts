@@ -54,8 +54,8 @@ export class ReserveComponent implements OnInit {
       }
 
       if (this.pet != null) {
-        this.price = "Complete Fee: $" + this.pet.price;
-        this.reserve = "Reservation Fee: $" + this.pet.reserve_fee;
+        this.price = "Complete Fee: $" + this.printPrice(this.pet.price);
+        this.reserve = "Reservation Fee: $" + this.printPrice(this.pet.reserve_fee);
       }
     })
 
@@ -93,12 +93,19 @@ export class ReserveComponent implements OnInit {
         apiCartItem.petName = value.pet.name;
         apiCartItem.productTotal = value.pet.price
         apiCartItem.reserve_fee = value.pet.reserve_fee
-        if (this.buttonMsg == "Reserve!") {
-          apiCartItem.note = "Client is making a reservation...";
-        } else if (this.buttonMsg == "Inquire!") {
-          apiCartItem.note == "Client is inquiring to pay full price...";
-        }
-        cart.cartItems.push(apiCartItem)
+        console.log(this.buttonMsg);
+        apiCartItem.note = this.buttonMsg == "Reserve!" ? "Client is making a reservation..." : "Client is inquiring to pay full price..."
+        // if (this.buttonMsg === "Reserve!") {
+        //   apiCartItem.note = "Client is making a reservation...";
+        //   console.log(apiCartItem.note);
+        // }
+        // if (this.buttonMsg === "Inquire") {
+        //   apiCartItem.note == "Client is inquiring to pay full price...";
+        //   console.log(apiCartItem.note);
+        // }
+        // console.log(apiCartItem.note);
+        cart.cartItems.push(apiCartItem);
+
       })
       this.buttonMsg = "Please wait!....";
       cart.grandTotal = this.cartService.total();
@@ -139,6 +146,13 @@ export class ReserveComponent implements OnInit {
     item.pet = this.petService.getPet(event);
     this.pet = item.pet;
     this.cartService.add(item);
+  }
+
+  printPrice(price : number)
+  {
+    var price_parts = price.toString().split(".");
+    price_parts[0] = price_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return price_parts.join(".");
   }
 
 }

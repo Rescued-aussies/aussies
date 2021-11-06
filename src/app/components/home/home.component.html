@@ -1,59 +1,121 @@
 <!-- Banner Start -->
-<div class="ghive_banner banner" style="background-image: url(assets/img/banner/10.jpg)">
-
-  <div class="container" >
-    <div class="row">
-      <div class="col-lg-12">
-        <div >
-          <p style="color: black;">
-            In light with the COVID-19 pandemic, we will not hold public adoption events and have canceled other planned events.  We are still taking in dogs and looking for volunteers to adopt them, however since most of the shelters we work with have stopped doing adoptions to the public, but the dogs haven’t stopped coming in and out as we ship to families.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      
-      <div class="col-lg-6 offset-lg-6">
-        <div class="ghive_banner-text">
-          <h2>Rescued Australian Shepherd Puppies...</h2>
-          <p>Puppies, Adults, Parents... </p>
-        </div>
-
-        <!-- Filter form start -->
-        <form class="ghive_banner-form" #searchForm="ngForm" (ngSubmit)="search()">
-          <div class="ghive_banner-form-inner">
-            <div class="ghive_banner-input">
-              <label for="filterBy">Search By Gender</label>
-              <input type="text" 
-              class="form-control" 
-              id="gender" 
-              placeholder="Male or Female." 
-              name="gender"
-              [(ngModel)]="genderSearch"
-              value="">
-            </div>
-            <div class="ghive_banner-input">
-              <label for="filterLocation">And/Or Age Limit</label>
-              <input type="number" 
-              class="form-control" 
-              id="age" 
-              placeholder="Upper Age Limit? (In Weeks)"
-              name="age"
-              [(ngModel)]="ageSearch"
-              min="5"
-              value="">
-            </div>
+<div class="ghive_testimonials-slider-02 ">
+  <div class="ghive_banner banner" style="background-image: url(assets/img/banner/7.png)">
+    
+    <div class="container" >
+      <div class="row">
+        <div class="col-lg-12">
+          <div >
+            <p style="color: black;">
+              In light with the COVID-19 pandemic, we will not hold public adoption events and have canceled other planned events.  We are still taking in dogs and looking for volunteers to adopt them, however since most of the shelters we work with have stopped doing adoptions to the public, but the dogs haven’t stopped coming in and out as we ship to families.
+            </p>
           </div>
-          <button type="submit" class="ghive_btn-custom primary btn-lg" name="button">Search Aussie
-          </button>
-        </form>
-        <!-- Filter form End -->
-
+        </div>
+      </div>
+      <div class="row">
+        
+        <div class="col-lg-6 offset-lg-6">
+          <div class="ghive_banner-text">
+            <h2 style="color: #331a03;">Rescued Australian Shepherd Puppies...</h2>
+            <p style="color: black;">Puppies, Adults, Parents... </p>
+          </div>
+  
+          <!-- Filter form start -->
+          <form class="ghive_banner-form" #searchForm="ngForm" (ngSubmit)="search()">
+            <div class="ghive_banner-form-inner">
+              <div class="ghive_banner-input">
+                <label for="filterBy">Search By Gender</label>
+                <input type="text" 
+                class="form-control" 
+                id="gender" 
+                placeholder="Male or Female." 
+                name="gender"
+                [(ngModel)]="genderSearch"
+                value="">
+              </div>
+              <div class="ghive_banner-input">
+                <label for="filterLocation">And/Or Age Limit</label>
+                <input type="number" 
+                class="form-control" 
+                id="age" 
+                placeholder="Upper Age Limit? (In Weeks)"
+                name="age"
+                [(ngModel)]="ageSearch"
+                min="5"
+                value="">
+              </div>
+            </div>
+            <button type="submit" class="ghive_btn-custom primary btn-lg" name="button">Search Aussie
+            </button>
+          </form>
+          <!-- Filter form End -->
+  
+        </div>
       </div>
     </div>
+  
   </div>
-
+  <div class="ghive_banner banner" style="background-image: url(assets/img/banner/8.png)">
+  
+    <div class="container" >
+      <div class="row">
+        <div class="col-lg-12">
+          <div >
+            <p style="color: whitesmoke;">
+              In light with the COVID-19 pandemic, we will not hold public adoption events and have canceled other planned events.  We are still taking in dogs and looking for volunteers to adopt them, however since most of the shelters we work with have stopped doing adoptions to the public, but the dogs haven’t stopped coming in and out as we ship to families.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        
+        <div class="col-lg-6 offset-lg-6">
+          <div class="ghive_banner-text">
+            <h2 style="color: whitesmoke;">Rescued Australian Shepherd Puppies...</h2>
+            <p style="color: #422509;">Puppies, Adults, Parents... </p>
+          </div>
+  
+          <!-- Filter form start -->
+          <form class="ghive_banner-form" #searchForm="ngForm" (ngSubmit)="search()">
+            <div class="ghive_banner-form-inner">
+              <div class="ghive_banner-input">
+                <label for="filterBy">Search By Gender</label>
+                <input type="text" 
+                class="form-control" 
+                id="gender" 
+                placeholder="Male or Female." 
+                name="gender"
+                [(ngModel)]="genderSearch"
+                value="">
+              </div>
+              <div class="ghive_banner-input">
+                <label for="filterLocation">And/Or Age Limit</label>
+                <input type="number" 
+                class="form-control" 
+                id="age" 
+                placeholder="Upper Age Limit? (In Weeks)"
+                name="age"
+                [(ngModel)]="ageSearch"
+                min="5"
+                value="">
+              </div>
+            </div>
+            <button type="submit" class="ghive_btn-custom primary btn-lg" name="button">Search Aussie
+            </button>
+          </form>
+          <!-- Filter form End -->
+  
+        </div>
+      </div>
+    </div>
+  
+  </div>
 </div>
+
+<!-- <div class="ghive_banner banner">
+  <div class=""></div>
+</div> -->
+
 <!-- Banner End -->
 
 <!-- How it Works Start (Icon Block) -->
@@ -134,26 +196,26 @@
 
           <div class="ghive_job-card-header">
             <img src="{{pet.image}}" alt="{{pet.name}}">
-            <a (click)="changeHeartState()" [ngStyle]="{color: liked === true ? '#ff5c1c' : '#dde3e7'}"
+            <a (click)="changeHeartState(pet)" [ngStyle]="{color: pet.liked === true ? '#ff5c1c' : '#dde3e7'}"
               style="cursor: pointer;">
               <i class="flaticon-heart"></i>
             </a>
           </div>
 
           <div class="ghive_job-card-body">
-            <h5> <a [routerLink]="['/puppy', pet.id]" >{{pet.name}} </a> </h5>
+            <h5> <a href="/puppy/{{pet.id}}" >{{pet.name}} </a> </h5>
             <ul style="margin-bottom: 0px; list-style-type: circle; font-family: Aclonica;">
               <li style="color: #808714;">{{pet.gender}}</li>
               <li style="color: #808714;">{{pet.age}}</li>
               <li style="color: #808714;">{{pet.registered}}</li>
               <hr>
-              <li style="color: #808714;"><span>Complete Fee: </span>${{pet.price}}</li>
-              <li style="color: #808714;"><span>Reservation Fee: </span>${{pet.reserve_fee}}</li>
+              <li style="color: #808714;"><span>Complete Fee: </span>${{printPrice(pet.price)}}</li>
+              <li style="color: #808714;"><span>Reservation Fee: </span>${{printPrice(pet.reserve_fee)}}</li>
             </ul>
           </div>
 
           <div class="ghive_job-card-footer">
-            <a [routerLink]="['/puppy', pet.id]" class="ghive_btn-custom primary btn-block ghive_rounded">Inquire</a>
+            <a href="../puppy/{{pet.id}}" class="ghive_btn-custom primary btn-block ghive_rounded">Inquire</a>
           </div>
 
         </div>

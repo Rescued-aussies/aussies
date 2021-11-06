@@ -67,6 +67,18 @@
   -------------------------------------------------------------------------------*/
   $('[data-toggle="tooltip"]').tooltip();
 
+  $('.count').each(function () {
+    $(this).prop('Counter',0).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 4000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+        }
+    });
+  });
+
   /*-------------------------------------------------------------------------------
   Magnific Popup
   -------------------------------------------------------------------------------*/
@@ -220,6 +232,7 @@
   /*-------------------------------------------------------------------------------
   Testimonials Slider
   -------------------------------------------------------------------------------*/
+
   $(".ghive_testimonials-slider").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -231,12 +244,32 @@
   /*-------------------------------------------------------------------------------
   Testimonials Slider (Home v2)
   -------------------------------------------------------------------------------*/
+  $(".ghive_testimonials-slider-02").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: true,
+    autoplay: true,
+    centerMode: true,
+    centerPadding: 0,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ]
+  });
+
   $(".ghive_testimonials-slider-2").slick({
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
     dots: true,
     autoplay: true,
+    centerMode: true,
+    centerPadding: 0,
     responsive: [
       {
         breakpoint: 1199,

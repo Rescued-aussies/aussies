@@ -32,12 +32,12 @@ export class PetComponent implements OnInit {
       }
     });
 
-    this.router.events.subscribe((evt) => {
-      if (!(evt instanceof NavigationEnd)) {
-          return;
-      }
-      window.scrollTo(0, 0)
-    });
+    // this.router.events.subscribe((evt) => {
+    //   if (!(evt instanceof NavigationEnd)) {
+    //       return;
+    //   }
+    //   window.scrollTo(0, 0)
+    // });
     this.titleService.setTitle( this.pet.name + " | " + this.pet.size + "Aussie")
   }
 
@@ -46,6 +46,13 @@ export class PetComponent implements OnInit {
     item.pet = this.pet;
     this.cartService.add(item);
     this.router.navigateByUrl("/reserve");
+  }
+
+  printPrice(price : number)
+  {
+    var price_parts = price.toString().split(".");
+    price_parts[0] = price_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return price_parts.join(".");
   }
 
 }

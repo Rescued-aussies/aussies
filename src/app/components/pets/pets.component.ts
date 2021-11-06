@@ -1,6 +1,8 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router, Scroll, Event } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { Pet } from '../../models/pet.model';
 import { PetService } from '../../services/pet.service';
 
@@ -17,23 +19,33 @@ export class PetsComponent implements OnInit {
   constructor(
     private petService: PetService,
     private router: Router,
-    private titleService: Title
-  ) { }
-
-  ngOnInit() {
-    this.titleService.setTitle('Available Aussies.')
-    this.pets = this.petService.getPets();
-    this.liked = false;
-    this.router.events.subscribe((evt) => {
-      if (!(evt instanceof NavigationEnd)) {
-          return;
-      }
-      window.scrollTo(0, 0)
-    });
+    private titleService: Title,
+    private viewportScroller: ViewportScroller
+  ) { 
+    
   }
 
-  changeHeartState(): void {
-    this.liked = !this.liked;
+  ngOnInit() {
+    // this.titleService.setTitle('Available Aussies.')
+    this.pets = this.petService.getPets();
+    this.liked = false;
+    // this.router.events.subscribe((evt) => {
+    //   if (!(evt instanceof NavigationEnd)) {
+    //       return;
+    //   }
+    //   window.scrollTo(0, 0)
+    // });
+  }
+
+  changeHeartState(pet: Pet): void {
+    pet.liked = !pet.liked ? true : false;
+  }
+
+  printPrice(price : number)
+  {
+    var price_parts = price.toString().split(".");
+    price_parts[0] = price_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return price_parts.join(".");
   }
 
 }

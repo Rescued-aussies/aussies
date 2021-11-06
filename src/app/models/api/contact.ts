@@ -1,5 +1,5 @@
 export class Contact {
-    name: string;
+    name: string = '';
     email: string;
     phone: string = "";
     country: string = "";

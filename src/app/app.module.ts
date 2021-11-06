@@ -26,6 +26,9 @@ import { PolicyComponent } from './components/policy/policy.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './components/search/search.component';
 import { ShippingComponent } from './components/shipping/shipping.component';
+import { TransferHttpCacheModule } from "@nguniversal/common";
+import { TransferHttpModule } from "@gorniv/ngx-universal";
+import { ApiService } from './services/api.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,6 @@ import { ShippingComponent } from './components/shipping/shipping.component';
   ],
   imports: [
     BrowserAnimationsModule,
-    BrowserModule,
     CommonModule,
     BrowserModule,
     FormsModule,
@@ -56,10 +58,14 @@ import { ShippingComponent } from './components/shipping/shipping.component';
     HttpClientModule,
     NgtUniversalModule,
     AppRoutingModule,
+    TransferHttpCacheModule,
+    TransferHttpModule
+
   ],
   providers: [
     ScriptService,
     PetService,
+    ApiService,
     PetStorageService
   ],
 })
