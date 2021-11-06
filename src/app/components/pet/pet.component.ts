@@ -38,14 +38,14 @@ export class PetComponent implements OnInit {
     //   }
     //   window.scrollTo(0, 0)
     // });
-    this.titleService.setTitle( this.pet.name + " | " + this.pet.size + "Aussie")
+    this.titleService.setTitle( this.pet.name + " | " + this.pet.size + " Aussie")
   }
 
   reservePet() {
     let item: Item = new Item();
     item.pet = this.pet;
     this.cartService.add(item);
-    this.router.navigateByUrl("/reserve");
+    // this.router.navigateByUrl("/reserve");
   }
 
   printPrice(price : number)

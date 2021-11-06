@@ -73,6 +73,7 @@ export class ReserveComponent implements OnInit {
     this.isLoading = true;
     let button = this.buttonMsg;
     this.buttonMsg = "Please wait!....";
+    console.log(this.buttonMsg)
     if (this.items.length < 1) {
       Swal({
         title: 'Oops!',
@@ -137,6 +138,7 @@ export class ReserveComponent implements OnInit {
             })
             this.buttonMsg = button;
           });
+          this.buttonMsg = button;
     }
   }
 

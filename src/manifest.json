@@ -1,5 +1,5 @@
 {
-  "name": "Rescued Australian Shepherd",
+  "name": "Rescued Australian Shepherds",
   "short_name": "Rescued Aussies",
   "theme_color": "#614327",
   "background_color": "#fafafa",
@@ -10,16 +10,6 @@
     {
       "src": "assets/img/logo-3.png",
       "sizes": "72x72",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/img/logo-3.png",
-      "sizes": "96x96",
-      "type": "image/png"
-    },
-    {
-      "src": "assets/img/logo-3.png",
-      "sizes": "128x128",
       "type": "image/png"
     }
   ]

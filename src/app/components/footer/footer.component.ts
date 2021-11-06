@@ -32,7 +32,7 @@ export class FooterComponent implements OnInit {
     .subscribe((data: any) => {
       this.isLoading = true;
       Swal({
-        title: 'Thanks!',
+        title: 'Subscribed!',
         text: 'Thank you! We received your email. We will keep you up-to-date.',
         type: 'success',
         confirmButtonText: 'Ok',

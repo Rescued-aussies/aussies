@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	left:60px;
+	background-color:#276fe9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}
